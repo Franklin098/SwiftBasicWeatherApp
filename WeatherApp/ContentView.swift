@@ -9,13 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            LinearGradient(gradient:
+                            Gradient(colors: [.blue, .white]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+            
+            VStack{
+                // Every modifier wraps the view in a NEW view ->  The Order matters!
+                Text("Cupertino, CA")
+                    .font(.system(size: 32,weight: .medium, design: .default))
+                    .foregroundColor(.white)
+                    .padding(.top)
+                   // .background(Color.red)
+                   // .frame(width: 200,height: 200) // the frame is after the background color
+                
+                VStack{
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit) // keeps the aspect ratio
+                        .frame(width: 180, height: 180) // try by error for the values, experience
+                    
+                    Text("76°")
+                    
+                }
+                
+                Spacer()
+            }
         }
-        .padding()
     }
 }
 
