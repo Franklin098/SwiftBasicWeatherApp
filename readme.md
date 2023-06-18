@@ -227,3 +227,13 @@ Text(title)
 Apply the bold modifier first, and then the frame modifier
 
 **Tip:** experience will help you to know the modifiers order, and the open specific to each view.
+
+# State
+
+Make the app look like you want is strait forward. The challenge is moving data all around.
+
+@State
+@Biding
+@StateObject
+@ObservedObject
+@EnvironmentObject
